@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace KnownProblemApi.Models.Context
+namespace KnownProblem.Data.Entity
 {
     public class Problem
     {

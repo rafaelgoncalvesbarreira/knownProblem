@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using KnownProblemApi.Models;
+using KnownProblem.Api.Models;
 
-namespace KnownProblemApi.Controllers
+namespace KnownProblem.Api.Controllers
 {
     [Produces("application/json")]
     [Route("api/Resolve")]

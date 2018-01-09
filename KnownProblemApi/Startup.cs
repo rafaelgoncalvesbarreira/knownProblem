@@ -9,9 +9,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
-using KnownProblemApi.Models.Context;
+using KnownProblem.Data.Context;
 
-namespace KnownProblemApi
+namespace KnownProblem.Api
 {
     public class Startup
     {

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using KnownProblem.Data.Entity;
 
-namespace KnownProblemApi.Models.Context
+namespace KnownProblem.Data.Context
 {
     public class KnownProblemContext: DbContext
     {
