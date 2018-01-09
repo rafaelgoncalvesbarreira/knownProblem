@@ -13,5 +13,18 @@ namespace KnownProblemApi.Models.Context
         }
 
         public DbSet<Problem> ProblemItems { get; set; }
+        public DbSet<Tag> TagItems { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            var problemBuilder = modelBuilder.Entity<Problem>();
+            problemBuilder.HasKey(p => p.Id);
+            problemBuilder.HasOne<Tag>(p => p.Tag).WithMany(t => t.Problems);
+
+            var tagBuilder = modelBuilder.Entity<Tag>();
+            tagBuilder.HasKey(t => t.Id);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

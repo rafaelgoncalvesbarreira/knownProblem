@@ -21,16 +21,26 @@ namespace KnownProblemApi.Controllers
             this.context = context;
 
             //POG
-            if(this.context.ProblemItems.Count() == 0)
+            if (this.context.ProblemItems.Count() == 0)
             {
+
+                context.TagItems.AddRange(
+                    new Tag
+                    {
+                        Name = "tag 1"
+                    },
+                    new Tag
+                    {
+                        Name = "projeto 2"
+                    });
                 this.context.ProblemItems.Add(new Problem
                 {
-                    Id = 1,
                     Title = "Problem mock",
                     Description = "There isn't data here",
-                    IsResolved = false
+                    IsResolved = false,
+                    Tag = new Tag { Id=1}
                 });
-                this.context.SaveChanges();    
+                this.context.SaveChanges();
             }
         }
 
@@ -44,7 +54,9 @@ namespace KnownProblemApi.Controllers
                         Title = problem.Title,
                         Description = problem.Description,
                         IsResolved = problem.IsResolved,
-                        Resolution = problem.Resolution
+                        Resolution = problem.Resolution,
+                        TagId = (problem.Tag == null ? null : (int?)problem.Tag.Id),
+                        TagName = (problem.Tag != null ? problem.Tag.Name :"")
                     }).ToList();
         }
 
@@ -56,13 +68,21 @@ namespace KnownProblemApi.Controllers
                 Title = problem.Title,
                 Description = problem.Description,
                 Resolution = problem.Resolution,
-                IsResolved = problem.IsResolved
+                IsResolved = problem.IsResolved,
             };
+
+            if(problem.TagId.HasValue)
+            {
+                newProblem.Tag = new Tag
+                {
+                    Id = problem.TagId.Value
+                };
+            }
 
             context.ProblemItems.Add(newProblem);
             await context.SaveChangesAsync();
 
-            return new OkResult();;
+            return new OkResult(); ;
         }
 
         [HttpPut("{id}")]

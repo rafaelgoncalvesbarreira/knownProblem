@@ -12,7 +12,7 @@ namespace KnownProblemApi.Controllers
     [Route("api/Duplicate")]
     public class DuplicateController : Controller
     {
-        [HttpPost]
+        [HttpGet("{id}")]
         public IEnumerable<ProblemDuplication> GetDuplication(int id)
         {
             return null;
