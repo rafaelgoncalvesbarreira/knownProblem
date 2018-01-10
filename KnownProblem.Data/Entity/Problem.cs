@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace KnownProblem.Data.Entity
 {
-    public class Problem
+    public class Problem: BaseEntity
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string Resolution { get; set; }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KnownProblem.Api", "KnownProblemApi\KnownProblem.Api.csproj", "{5B949D6E-E01B-4A89-B062-079724A6436A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KnownProblem.Api", "KnownProblem.Api\KnownProblem.Api.csproj", "{5B949D6E-E01B-4A89-B062-079724A6436A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTest", "UnitTest\UnitTest.csproj", "{2EA2B747-3708-4FD2-A4A9-1942CD5CA0FD}"
 EndProject

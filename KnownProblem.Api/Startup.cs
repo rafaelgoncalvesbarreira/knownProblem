@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
 using KnownProblem.Data.Context;
+using KnownProblem.Data.Repository;
 
 namespace KnownProblem.Api
 {
@@ -34,7 +35,8 @@ namespace KnownProblem.Api
             {
                 services.AddDbContext<KnownProblemContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             }
-            
+
+            services.AddScoped(typeof(IRepository<>), typeof(EntityRepository<>));
             services.AddMvc();
         }
 
